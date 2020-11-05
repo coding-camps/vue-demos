@@ -1,5 +1,5 @@
 <script setup>
-import Demo from './01_double-data-bind.vue'
+import Demo from './02_v-model.vue'
 </script>
 
 <template>

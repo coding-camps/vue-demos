@@ -1,5 +1,5 @@
 <script setup>
-import Demo from './02_v-model.vue'
+import Demo from './03_v-model.vue'
 </script>
 
 <template>

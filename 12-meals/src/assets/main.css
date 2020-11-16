@@ -5,9 +5,10 @@
 }
 
 html {
-    font-size: calc(100vm / 750);
+    font-size: calc(100vw / 750);
 }
 
 img {
-    width: 30vw;
+    width: 100%;
+    vertical-align: middle;
 }

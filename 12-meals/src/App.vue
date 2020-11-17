@@ -3,10 +3,11 @@
 
 // const meals = useMealsStore()
 import MealList from "@/components/meals/MealList.vue";
+import MealListFilter from "@/components/filter/MealListFilter.vue";
 </script>
 
 <template>
-    <h1>汉堡数据</h1>
+    <MealListFilter></MealListFilter>
     <MealList></MealList>
 </template>
 

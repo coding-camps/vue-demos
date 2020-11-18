@@ -7,7 +7,10 @@ const meals = useMealsStore()
 
 <template>
     <div class="meals">
-        <Meal v-for="meal in meals.data" :meal="meal"></Meal>
+        <Meal v-for="meal in meals.filterMeals" :meal="meal" :key="meal.id"></Meal>
+        <div v-if="meals.filterMeals.length == 0" class="no-found">
+            没有找到指定的商品
+        </div>
     </div>
 </template>
 
@@ -16,5 +19,12 @@ const meals = useMealsStore()
     height: calc(100vh - 120rem);
     /* padding: 120rem 0; */
     overflow: auto;
+}
+.no-found {
+    font-size: 40rem;
+    color: darkgray;
+    height: 280rem;
+    text-align: center;
+    padding: 100rem;
 }
 </style>

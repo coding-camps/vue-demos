@@ -38,7 +38,7 @@ const count = ref(0)
 
 .sub {
     background-color: white;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 
 </style>

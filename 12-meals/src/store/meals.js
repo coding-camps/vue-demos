@@ -1,4 +1,4 @@
-import { defineStore } from "pinia"
+import {defineStore} from "pinia"
 
 export const useMealsStore = defineStore("meals", {
 
@@ -54,6 +54,14 @@ export const useMealsStore = defineStore("meals", {
                 img: "/images/meals/7.png"
             },
         ],
+
+        keyword: "",
     }),
+
+    getters: {
+        filterMeals: (state) => {
+            return state.data.filter(item => item.title.indexOf(state.keyword) != -1)
+        }
+    }
 
 })

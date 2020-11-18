@@ -1,16 +1,16 @@
 <template>
     <div class="filter">
         <div class="filter-inner">
-            <input class="filter-input" type="text" placeholder="请输入关键字" />
+            <input v-model="mealsStore.keyword" class="filter-input" type="text" placeholder="请输入关键字" />
             <i class="ri-search-line"></i>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    name: "MealListFilter.vue"
-}
+<script setup>
+import { useMealsStore } from "@/store/meals";
+
+const mealsStore = useMealsStore()
 </script>
 
 <style scoped>

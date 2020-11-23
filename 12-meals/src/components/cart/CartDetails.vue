@@ -1,11 +1,22 @@
 <script setup>
+import {useMealsStore} from "@/store/meals"
 import Mask from "@/components/ui/Mask.vue";
+import MealList from "@/components/meals/MealList.vue";
+
+const meals = useMealsStore()
 </script>
 
 <template>
     <Mask>
         <div class="cart-details">
-            购物车详情
+            <div class="header">
+                <h2>餐品详情</h2>
+                <a href="javascript:;" @click="meals.clearCart()">
+                    <i class="ri-delete-bin-line"></i>
+                    清空购物车
+                </a>
+            </div>
+            <MealList :desc="false" :meals="meals.cartMeals"></MealList>
         </div>
     </Mask>
 </template>
@@ -13,9 +24,45 @@ import Mask from "@/components/ui/Mask.vue";
 <style scoped>
 .cart-details {
     font-size: 36rem;
-    color: blue;
     width: 100%;
-    height: 60vh;
-    background-color: skyblue;
+    max-height: 70%;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    overflow: auto;
+    border-top-left-radius:40rem;
+    border-top-right-radius:40rem;
+}
+
+.meals {
+    height: 100%;
+    padding-top: 40rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rem 40rem 0;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    border-top-left-radius:40rem;
+    border-top-right-radius:40rem;
+}
+
+.header h2 {
+    font-size: 28rem;
+}
+
+.header a {
+    color: #9f9f9f;
+    font-size: 26rem;
+    display: flex;
+    align-items: center;
+}
+
+.header i {
+    font-size: 26rem;
+    margin-right: 6rem;
 }
 </style>

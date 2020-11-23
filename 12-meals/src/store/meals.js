@@ -104,6 +104,10 @@ export const useMealsStore = defineStore("meals", {
             }
             meal.count--
         },
+
+        clearCart() {
+            this.cartMeals.forEach(item => item.count = 0)
+        }
     },
 
 })

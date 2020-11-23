@@ -1,7 +1,7 @@
 <script setup>
 import Counter from "@/components/ui/Counter.vue"
 
-const props = defineProps(["meal"])
+const props = defineProps(["meal", "desc"])
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const props = defineProps(["meal"])
         <div class="info">
             <div class="desc">
                 <h2>{{  props.meal.title }}</h2>
-                <p>{{  props.meal.desc }}</p>
+                <p v-show="props.desc">{{  props.meal.desc }}</p>
             </div>
             <div class="price-btn">
                 <span class="price">{{  props.meal.price }}</span>

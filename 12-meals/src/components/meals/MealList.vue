@@ -1,14 +1,12 @@
 <script setup>
-import {useMealsStore} from "@/store/meals"
 import Meal from "@/components/meals/Meal.vue"
-
-const meals = useMealsStore()
+const props = defineProps(["meals"])
 </script>
 
 <template>
     <div class="meals">
-        <Meal v-for="meal in meals.filterMeals" :meal="meal" :key="meal.id"></Meal>
-        <div v-if="meals.filterMeals.length == 0" class="no-found">
+        <Meal :desc="$attrs.desc" v-for="meal in props.meals" :meal="meal" :key="meal.id"></Meal>
+        <div v-if="!props.meals || props.meals.length == 0" class="no-found">
             没有找到指定的商品
         </div>
     </div>

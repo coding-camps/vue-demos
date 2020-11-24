@@ -25,7 +25,6 @@ const meals = useMealsStore()
 .cart-details {
     font-size: 36rem;
     width: 100%;
-    max-height: 70%;
     position: absolute;
     bottom: 0;
     background-color: white;
@@ -35,16 +34,14 @@ const meals = useMealsStore()
 }
 
 .meals {
-    height: 100%;
-    padding-top: 40rem;
+    height: auto;
+    max-height: calc( 280rem * 4);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 20rem 40rem 0;
-    position: fixed;
-    width: 100%;
+    padding: 20rem 40rem;
     background-color: white;
     border-top-left-radius:40rem;
     border-top-right-radius:40rem;

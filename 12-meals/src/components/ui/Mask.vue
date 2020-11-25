@@ -1,7 +1,10 @@
 <template>
-    <div v-show="props.isShow" @click.self="$emit('hide')" class="mask">
-        <slot></slot>
-    </div>
+    <!-- Teleport 可以将组件渲染到网页的指定位置 -->
+    <Teleport to="body">
+        <div v-show="props.isShow" @click.self="$emit('hide')" class="mask">
+            <slot></slot>
+        </div>
+    </Teleport>
 </template>
 
 <script setup>

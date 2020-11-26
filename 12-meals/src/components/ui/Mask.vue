@@ -1,7 +1,7 @@
 <template>
     <!-- Teleport 可以将组件渲染到网页的指定位置 -->
     <Teleport to="body">
-        <div v-show="props.isShow" @click.self="$emit('hide')" class="mask">
+        <div :="$attrs" v-show="props.isShow" @click.self="$emit('hide')" class="mask">
             <slot></slot>
         </div>
     </Teleport>
@@ -19,7 +19,7 @@ const emits = defineEmits(["hide"])
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
 }
 </style>

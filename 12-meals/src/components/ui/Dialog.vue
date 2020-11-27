@@ -1,6 +1,13 @@
 <script setup>
 import Mask from './Mask.vue';
 const props = defineProps(["msg"])
+
+const emits = defineEmits()
+
+const okHandler = () => {
+    emits('ok')
+    emits('hide')
+}
 </script>
 
 <template>
@@ -9,10 +16,7 @@ const props = defineProps(["msg"])
             <p class="msg">{{ props.msg }}</p>
             <div class="btn">
                 <button @click="$emit('hide')" class="cancel">取消</button>
-                <button @click="() => {
-                    $emit('ok')
-                    $emit('hide')
-                }" class="ok">确认</button>
+                <button @click="okHandler" class="ok">确认</button>
             </div>
         </div>
     </Mask>

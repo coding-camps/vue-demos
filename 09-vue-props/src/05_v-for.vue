@@ -54,6 +54,14 @@ const arr2 = ref([
 
         在使用v-for时，可以为元素指定一个唯一的key
             有了key以后，元素再比较时就会按照相同的key去比较而不是顺序
+            key 不要使用 index，用index作为key和没使用是一样的效果，因为index也在变化中
+            详情参考一下几篇文章：
+            - https://www.jb51.net/article/184127.htm
+            - https://www.fengnayun.com/news/content/128679.html
+            - https://juejin.cn/post/7055463998015143966
+            - https://www.jianshu.com/p/1a18ddb9a866?ivk_sa=1024320u
+            - https://www.jianshu.com/p/99f0db2dee28
+
 
         <div key=1>孙悟空</div>
         <div key=2>猪八戒</div>

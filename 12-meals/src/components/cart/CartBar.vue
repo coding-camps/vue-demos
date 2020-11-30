@@ -1,4 +1,10 @@
 <template>
+
+    <Checkout
+        @close="showCheckout=false"
+        :is-show="showCheckout"
+    ></Checkout>
+
     <CartDetails :is-show="showDetails" @hide="showDetails = false"></CartDetails>
 
     <div class="cart-bar">
@@ -14,7 +20,7 @@
                 {{ meals.amount }}
             </div>
         </div>
-        <button class="checkout">去结算</button>
+        <button @click="showCheckout = meals.totalCount > 0" class="checkout-btn">去结算</button>
     </div>
 </template>
 
@@ -23,10 +29,12 @@ import {ref} from "vue";
 import cartBag from "../../assets/bag.png"
 import {useMealsStore} from "@/store/meals";
 import CartDetails from "@/components/cart/CartDetails.vue";
+import Checkout from "../checkout/Checkout.vue";
 
 const meals = useMealsStore()
 
 const showDetails = ref(false)
+const showCheckout = ref(true)
 </script>
 
 <style scoped>
@@ -79,7 +87,7 @@ const showDetails = ref(false)
     content: "¥";
     font-size: 28rem;
 }
-.checkout {
+.checkout-btn {
     background-color: rgb(248, 188, 0);
     position: absolute;
     top: 0;

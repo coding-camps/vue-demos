@@ -27,7 +27,7 @@ const props = defineProps(["meal", "desc"])
     display: flex;
     align-items: center;
     height: 280rem;
-    border-bottom: 1px gray solid;
+    border-bottom: 1px solid #e6e6e6;
     padding: 0 20rem;
 }
 

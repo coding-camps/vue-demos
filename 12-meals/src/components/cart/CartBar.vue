@@ -34,7 +34,7 @@ import Checkout from "../checkout/Checkout.vue";
 const meals = useMealsStore()
 
 const showDetails = ref(false)
-const showCheckout = ref(true)
+const showCheckout = ref(false)
 </script>
 
 <style scoped>

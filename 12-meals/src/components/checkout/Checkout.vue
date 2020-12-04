@@ -28,7 +28,18 @@ const meals = useMealsStore()
                     </div>
                 </div>
             </div>
-            <footer>合计¥<span>{{ meals.amount }}</span></footer>
+            <footer>合计：¥<span>{{ meals.amount }}</span></footer>
+        </div>
+        <div class="bar">
+            <div class="total-amount">
+                <div v-show="meals.totalCount <= 0" class="no-goods">
+                    未选购商品
+                </div>
+                <div v-show="meals.totalCount > 0" @click="showDetails = true" class="has-goods">
+                    {{ meals.amount }}
+                </div>
+            </div>
+            <button class="checkout-btn">去支付</button>
         </div>
     </div>
 </template>
@@ -58,6 +69,10 @@ const meals = useMealsStore()
     margin: 0 20rem;
     border-radius: 40rem;
     padding: 0 20rem;
+    position: fixed;
+    bottom: 150rem;
+    left: 0;
+    right: 0;
 }
 
 .details header {
@@ -138,5 +153,53 @@ const meals = useMealsStore()
 .amount::before {
     content: "¥";
     font-weight: normal;
+}
+
+.bar {
+    background-color: rgb(58, 58, 58);
+    font-size: 36rem;
+    height: 100rem;
+    width: 710rem;
+    position: fixed;
+    bottom: 30rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 60rem;
+}
+
+.total-amount {
+    margin-left: 60rem;
+    color: rgb(158, 158, 158);
+    line-height: 100rem;
+}
+
+.no-goods,
+.has-goods {
+    color: rgb(158, 158, 158);
+    font-size: 36rem;
+    font-weight: bold;
+}
+
+.has-goods {
+    color: white;
+}
+
+.has-goods::before {
+    content: "¥";
+    font-size: 28rem;
+    margin-right: 10rem;
+}
+
+.checkout-btn {
+    background-color: rgb(248, 188, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 200rem;
+    border-radius: 60rem;
+    border: none;
+    font-size: 36rem;
 }
 </style>

@@ -86,6 +86,7 @@ const showCheckout = ref(false)
 .has-goods::before {
     content: "¥";
     font-size: 28rem;
+    margin-right: 10rem;
 }
 .checkout-btn {
     background-color: rgb(248, 188, 0);

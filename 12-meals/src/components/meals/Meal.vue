@@ -64,5 +64,7 @@ const props = defineProps(["meal", "desc"])
 
 .price::before {
     content: "¥";
+    font-size: 26rem;
+    margin-right: 10rem;
 }
 </style>

@@ -5,6 +5,7 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+// import type { ElButton } from 'element-plus'
 </script>
 
 <template>
@@ -17,6 +18,8 @@ import SupportIcon from './icons/IconSupport.vue'
     Vue’s
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
+    <el-button type="primary" round>Primary</el-button>
+    <!-- <ElButton type="primary" round>Primary</ElButton> -->
   </WelcomeItem>
 
   <WelcomeItem>

@@ -6,6 +6,12 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 // import type { ElButton } from 'element-plus'
+import { storeToRefs } from 'pinia'
+import {useCounterStore} from '@/stores/counter'
+
+const store = useCounterStore()
+const { count, doubleCount } = storeToRefs(store)
+const { increment, reset } = store
 </script>
 
 <template>
@@ -18,7 +24,16 @@ import SupportIcon from './icons/IconSupport.vue'
     Vue’s
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
-    <el-button type="primary" round>Primary</el-button>
+
+    <el-divider />
+    count * 1:
+    <el-text class="mx-1" type="primary" style="padding-right: 10px;">{{count}}</el-text>
+    <br/>
+    count * 2:
+    <el-text class="mx-1" type="primary" style="padding-right: 10px;">{{doubleCount}}</el-text>
+    <br/>
+    <el-button type="primary" round @click="increment">Increment</el-button>
+    <el-button type="primary" round @click="reset">Reset</el-button>
     <!-- <ElButton type="primary" round>Primary</ElButton> -->
   </WelcomeItem>
 

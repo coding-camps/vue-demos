@@ -26,14 +26,16 @@ const { increment, reset } = store
     provides you with all information you need to get started.
 
     <el-divider />
+    <el-icon><Star /></el-icon>
     count * 1:
     <el-text class="mx-1" type="primary" style="padding-right: 10px;">{{count}}</el-text>
     <br/>
+    <el-icon><StarFilled /></el-icon>
     count * 2:
     <el-text class="mx-1" type="primary" style="padding-right: 10px;">{{doubleCount}}</el-text>
     <br/>
-    <el-button type="primary" round @click="increment">Increment</el-button>
-    <el-button type="primary" round @click="reset">Reset</el-button>
+    <el-button type="primary" round icon="CirclePlus" @click="increment">Increment</el-button>
+    <el-button type="primary" round icon="Setting" @click="reset">Reset</el-button>
     <!-- <ElButton type="primary" round>Primary</ElButton> -->
   </WelcomeItem>
 

@@ -54,6 +54,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      // '@': path.join(__dirname, "src"),
+      // '~': path.join(__dirname, "node_modules"),
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
